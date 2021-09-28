@@ -2,8 +2,8 @@ package estruturadedados.listaligada;
 
 public class ListaLigada<TIPO> {
 	
-	private Elemento primeiro;
-	private Elemento ultimo;
+	private Elemento<TIPO> primeiro;
+	private Elemento<TIPO> ultimo;
 	private int tamanho;
 	
 	public ListaLigada() {
@@ -11,16 +11,16 @@ public class ListaLigada<TIPO> {
 	}
 	
 	
-	public Elemento getPrimeiro() {
+	public Elemento<TIPO> getPrimeiro() {
 		return primeiro;
 	}
-	public void setPrimeiro(Elemento primeiro) {
+	public void setPrimeiro(Elemento<TIPO> primeiro) {
 		this.primeiro = primeiro;
 	}
-	public Elemento getUltimo() {
+	public Elemento<TIPO>  getUltimo() {
 		return ultimo;
 	}
-	public void setUltimo(Elemento ultimo) {
+	public void setUltimo(Elemento<TIPO>  ultimo) {
 		this.ultimo = ultimo;
 	}
 	public int getTamanho() {
@@ -30,8 +30,8 @@ public class ListaLigada<TIPO> {
 		this.tamanho = tamanho;
 	}
 	
-	public void adicionar(String novoValor) {
-		Elemento novoElemento =  new Elemento(novoValor);
+	public void adicionar(TIPO novoValor) {
+		Elemento novoElemento =  new Elemento<TIPO>(novoValor);
 		if(this.primeiro == null && this.ultimo == null) { //Se a lista tiver vazia
 			this.primeiro = novoElemento;
 			this.ultimo = novoElemento;
@@ -45,11 +45,11 @@ public class ListaLigada<TIPO> {
 
 	}
 	
-	public void remover(String valorProcurado) {
-			Elemento anterior = null;
-			Elemento atual =  this.primeiro;
+	public void remover(TIPO valorProcurado) {
+			Elemento<TIPO> anterior = null;
+			Elemento<TIPO> atual =  this.primeiro;
 			for(int i = 0; i < this.getTamanho(); i++) {
-				if(atual.getValor().equalsIgnoreCase(valorProcurado)) {
+				if(atual.getValor().equals(valorProcurado)) {
 					if(this.tamanho == 1) {
 						this.primeiro = null;
 						this.ultimo =  null;
@@ -74,8 +74,8 @@ public class ListaLigada<TIPO> {
 			
 	}
 		
-	public Elemento get(int posicao) {
-		Elemento atual = this.primeiro;
+	public Elemento<TIPO> get(int posicao) {
+		Elemento<TIPO> atual = this.primeiro;
 		
 		for(int i = 0; i < posicao ; i++) {
 			if(atual.getProximo() != null) { //Se não for o ultimo elemento
@@ -86,53 +86,53 @@ public class ListaLigada<TIPO> {
 		return atual;
 	}
 	
-	public Elemento getConteudo(String valor) {
-		Elemento atual = this.primeiro;
-		boolean achou = false;
-		
-		for(int i = 0; i < this.tamanho; i++) {
-			if(atual.getValor().equalsIgnoreCase(valor)) {	
-				achou = true;
-				break;
-			}
-			if(atual.getProximo() != null) {
-				atual = atual.getProximo();
-			}
-		}
-		if(achou) {
-			return atual;
-		}else {
-			atual.setValor("Não encontrado");
-			atual.setProximo(atual);
-			return atual;
-		}
-	}
+//	public Elemento getConteudo(String valor) {
+//		Elemento atual = this.primeiro;
+//		boolean achou = false;
+//		
+//		for(int i = 0; i < this.tamanho; i++) {
+//			if(atual.getValor().equalsIgnoreCase(valor)) {	
+//				achou = true;
+//				break;
+//			}
+//			if(atual.getProximo() != null) {
+//				atual = atual.getProximo();
+//			}
+//		}
+//		if(achou) {
+//			return atual;
+//		}else {
+//			atual.setValor("Não encontrado");
+//			atual.setProximo(atual);
+//			return atual;
+//		}
+//	}
+//	
+//	public int index(String valor) {
+//		int index = -1;
+//		Elemento atual = this.primeiro;
+//		boolean achou = false;
+//		
+//		for(int i = 0; i < this.tamanho; i++) {
+//			if(atual.getValor().equalsIgnoreCase(valor)) {
+//				achou = true;
+//				index = i;
+//				
+//				break;
+//			}
+//			if(atual.getProximo() != null) {
+//				atual = atual.getProximo();
+//			}
+//		}
+//		if(index >= 0 && achou) {
+//			return index;
+//		}else {
+//			return -1;
+//		}
+//	}
 	
-	public int index(String valor) {
-		int index = -1;
-		Elemento atual = this.primeiro;
-		boolean achou = false;
-		
-		for(int i = 0; i < this.tamanho; i++) {
-			if(atual.getValor().equalsIgnoreCase(valor)) {
-				achou = true;
-				index = i;
-				
-				break;
-			}
-			if(atual.getProximo() != null) {
-				atual = atual.getProximo();
-			}
-		}
-		if(index >= 0 && achou) {
-			return index;
-		}else {
-			return -1;
-		}
-	}
-	
-	public void adicionarNoInicio(String novoValor){
-        Elemento novoElemento = new Elemento(novoValor);
+	public void adicionarNoInicio(TIPO novoValor){
+        Elemento<TIPO> novoElemento = new Elemento<TIPO>(novoValor);
         if (this.primeiro == null){
               this.primeiro = novoElemento;
               this.ultimo = novoElemento;
