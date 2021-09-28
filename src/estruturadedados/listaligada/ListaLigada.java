@@ -1,6 +1,6 @@
 package estruturadedados.listaligada;
 
-public class ListaLigada {
+public class ListaLigada<TIPO> {
 	
 	private Elemento primeiro;
 	private Elemento ultimo;
@@ -45,7 +45,32 @@ public class ListaLigada {
 
 	}
 	
-	public void remover(String novoValor) {
+	public void remover(String valorProcurado) {
+			Elemento anterior = null;
+			Elemento atual =  this.primeiro;
+			for(int i = 0; i < this.getTamanho(); i++) {
+				if(atual.getValor().equalsIgnoreCase(valorProcurado)) {
+					if(this.tamanho == 1) {
+						this.primeiro = null;
+						this.ultimo =  null;
+					}else if(atual == primeiro) {
+						this.primeiro = atual.getProximo();
+						atual.setProximo(null);
+					}else if(atual == ultimo) {
+						this.ultimo = anterior;
+						anterior.setProximo(null);
+					}else {
+						anterior.setProximo(atual.getProximo());
+						atual = null;
+						
+					}
+					this.tamanho--;
+					break;
+				}
+				
+				anterior = atual;
+				atual = atual.getProximo();
+			}
 			
 	}
 		
@@ -105,4 +130,19 @@ public class ListaLigada {
 			return -1;
 		}
 	}
+	
+	public void adicionarNoInicio(String novoValor){
+        Elemento novoElemento = new Elemento(novoValor);
+        if (this.primeiro == null){
+              this.primeiro = novoElemento;
+              this.ultimo = novoElemento;
+              this.tamanho++;
+        }else{
+              novoElemento.setProximo(this.primeiro);
+              this.primeiro = novoElemento;
+              this.tamanho++;
+        }
+	}
+	
+	
 }
