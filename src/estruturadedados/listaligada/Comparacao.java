@@ -11,7 +11,7 @@ public class Comparacao {
 		
 		//Adicionar elementos
 		
-		int limite = 10000;
+		int limite = 100000;
 		long tempoInicial =  System.currentTimeMillis();
 		long tempoFinal = System.currentTimeMillis();
 		
@@ -48,12 +48,15 @@ public class Comparacao {
 		
 		
 		tempoInicial =  System.currentTimeMillis();
-		for(int i = 0; i < lista.getTamanho(); i++) {
-			lista.get(i);
+		
+		IteratorListaLigada<Integer> iterator =  lista.getIterator();
+		
+		while(iterator.temProximo()){
+			iterator.getProximo();
 		}
 		
 		tempoFinal =  System.currentTimeMillis();
-		System.out.println("\n\nTempo de leitura da Liasta Ligada: ");
+		System.out.println("\n\nTempo de leitura da Lista Ligada: ");
 		System.out.print(tempoFinal - tempoInicial);
 		
 		

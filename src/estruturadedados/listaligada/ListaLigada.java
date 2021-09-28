@@ -86,6 +86,11 @@ public class ListaLigada<TIPO> {
 		return atual;
 	}
 	
+	
+	public IteratorListaLigada<TIPO>  getIterator(){
+		return new IteratorListaLigada<TIPO>(this.primeiro);
+	}
+	
 //	public Elemento getConteudo(String valor) {
 //		Elemento atual = this.primeiro;
 //		boolean achou = false;
