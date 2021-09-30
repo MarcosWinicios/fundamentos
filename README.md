@@ -5,5 +5,6 @@
     - Complexidade de algorítmos
     - Busca Linear
     - Busca Binária
+    - Algoritmos de ordenação
 
 - Collections
