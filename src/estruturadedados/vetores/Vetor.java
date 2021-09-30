@@ -1,4 +1,4 @@
-package estruturadedados;
+package estruturadedados.vetores;
 
 import java.util.Scanner;
 

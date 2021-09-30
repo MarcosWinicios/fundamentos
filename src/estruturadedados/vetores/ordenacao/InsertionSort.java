@@ -1,4 +1,4 @@
-package estruturadedados.algoritmosdeordenacao;
+package estruturadedados.vetores.ordenacao;
 
 public class InsertionSort {
 	//Pior caso: Quando o vetor está invertido

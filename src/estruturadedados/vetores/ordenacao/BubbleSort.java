@@ -1,4 +1,4 @@
-package estruturadedados.algoritmosdeordenacao;
+package estruturadedados.vetores.ordenacao;
 
 public class BubbleSort {
 	public static void main(String[] args) {
