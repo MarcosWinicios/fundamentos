@@ -11,10 +11,10 @@ public class InsertionSort {
 			vetor[i] = (int) (Math.random() * vetor.length);
 		}
 		
-//		System.out.println("Vetor desordenado: ");
-//		for(int i = 0; i < vetor.length; i++) {
-//			System.out.println(vetor[i]);
-//		}
+		System.out.println("Vetor desordenado: ");
+		for(int i = 0; i < vetor.length; i++) {
+			System.out.println(vetor[i]);
+		}
 		
 		int aux, j;
 		
