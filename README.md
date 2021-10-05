@@ -6,7 +6,7 @@
     - Busca Linear
     - Busca Binária
     - Algoritmos de ordenação
-    	- BubblrSort
+    	- BubblerSort
     	- InserctionSort
     	- SelectionSort
     - Algoritmos recursivos
