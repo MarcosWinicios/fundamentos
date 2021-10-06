@@ -18,7 +18,7 @@
 		- for
 		- Enchaced For
 		- forEach
-			- Utilizando Tipo Consumer
-			- Expressão Lâmbida
+			- Tipo Consumer
+			- Expressão Lâmbda
 			- Method Reference
 		- Stream API
