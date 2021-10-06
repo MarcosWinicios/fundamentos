@@ -1,5 +1,5 @@
-# fundamentos
-### Repositório destinado ao treino de fundamentos do Java
+# Fundamentos da linguagem Java
+
 
 - Estrutura de dados
     - Complexidade de algorítmos
