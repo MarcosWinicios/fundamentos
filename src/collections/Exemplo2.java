@@ -15,10 +15,12 @@ public class Exemplo2 {
 		clientes.forEach(cliente -> System.out.printf("ID: %d. Nome: %s%n", 
 				cliente.getId(), cliente.getNome()));
 		
-		
+
+		System.out.println(clientes.get(2).getNome().startsWith("J"));
+
 		clientes.forEach(System.out::println);
 
-
+		
 	}
 
 }

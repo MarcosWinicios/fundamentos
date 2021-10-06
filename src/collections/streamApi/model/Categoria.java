@@ -1,4 +1,4 @@
-package streamApi.model;
+package collections.streamApi.model;
 
 public class Categoria {
 	private String nome;
