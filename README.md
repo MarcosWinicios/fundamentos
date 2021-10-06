@@ -21,3 +21,4 @@
 			- Utilizando Tipo Consumer
 			- Expressão Lâmbida
 			- Method Reference
+		- Stream API
