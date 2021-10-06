@@ -44,15 +44,14 @@ public class ExemploFilterForEach {
 		
 		
 		System.out.println("---\n"); 
-		System.out.println("Utilizando tipo Stream somento com Consumer e expressão lâmbida\n");
+		System.out.println("Utilizando tipo Stream somento com Consumer e expressão lâmbda\n");
 		Stream<Produto> produtosStream2 =  produtos.stream()
 				.filter(p -> p.getNome().startsWith("C"));
 		
 //		produtosStream.forEach(Produto::inativar);
 		
-		
 		System.out.println("---\n");
-		System.out.println("Utilizando apenas o método stream com expressão lâmbida\n");
+		System.out.println("Utilizando apenas o método stream com expressão lâmbda\n");
 		produtos.stream()
 				.filter(p -> p.getNome().startsWith("C"))
 				.forEach(Produto::inativar); 
