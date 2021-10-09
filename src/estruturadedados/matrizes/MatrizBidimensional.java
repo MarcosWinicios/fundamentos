@@ -1,6 +1,6 @@
 package estruturadedados.matrizes;
 
-public class Alunos {
+public class MatrizBidimensional {
 
 	public static void main(String[] args) {
 		// Declarando matriz
