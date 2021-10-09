@@ -25,7 +25,8 @@ public class MatrizIrregulares {
 				nomesFilhos[i][j] = scan.next();
 			}
 		}
-		 System.out.println();
+		
+		System.out.println();
 		for(int i = 0; i < nomesFilhos.length; i++) {
 			System.out.println("Pessoa " + i+1 + " tem: " + nomesFilhos[i].length + "filhos");
 			for (int j = 0; j < nomesFilhos[i].length; j++) {
@@ -33,9 +34,6 @@ public class MatrizIrregulares {
 			}
 			System.out.println();
 		}
-
-
-		
 	}
 
 }
