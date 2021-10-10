@@ -1,17 +1,27 @@
 package estruturadedados.vetores;
 
+import java.util.Scanner;
+
 public class ValorMaisProximoDeZero {
 
 	public static void main(String[] args) {
 		// Capturar o valor mais próximo de ZERO em um vetor.
 		// Se o valor for negativo e ouver o mesmo valor positivo, capturar o positivo
 		
-		int[] vetor = new int[15];
+		Scanner input =  new Scanner(System.in);
+		
+		System.out.print("Informe o tamanho do vetor a ser gerado: ");
+		int tamanhoVetor = input.nextInt();
+		
+		System.out.println();
+		
+		int[] vetor = new int[tamanhoVetor];
 		vetor = writeArray(vetor);
 		printAray(vetor);
 		
 		int valorMaisProximoDeZero = buscarItemMaisProximoDeZero(vetor);
 		
+		System.out.print("O valor mais próximo de zero é: ");
 		if(valorMaisProximoDeZero < 0 ) {
 			int valor = tornarNumeroPositivo(valorMaisProximoDeZero);
 			if(exists(vetor, valor)) {
@@ -54,7 +64,7 @@ public class ValorMaisProximoDeZero {
 	}
 	
 	public static void printAray(int[] array) {
-		System.out.print("\n[ ");
+		System.out.print("[ ");
 		for(int i = 0; i < array.length; i++) {
 			System.out.print(array[i]);
 			if(i < array.length -1) {
