@@ -1,5 +1,6 @@
 package estruturadedados.vetores;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ValorMaisProximoDeZero {
@@ -14,26 +15,33 @@ public class ValorMaisProximoDeZero {
 		int tamanhoVetor = input.nextInt();
 		
 		System.out.println();
-		
+	
 		int[] vetor = new int[tamanhoVetor];
+		
 		vetor = writeArray(vetor);
 		printAray(vetor);
 		
-		int valorMaisProximoDeZero = buscarItemMaisProximoDeZero(vetor);
-		
-		System.out.print("O valor mais próximo de zero é: ");
-		if(valorMaisProximoDeZero < 0 ) {
-			int valor = tornarNumeroPositivo(valorMaisProximoDeZero);
-			if(exists(vetor, valor)) {
-				System.out.println(valor);
-			}else {
-				System.out.println(valorMaisProximoDeZero);
-			}	
-		}else {
-			System.out.println(valorMaisProximoDeZero);
-		}
+		int valor = computeClosestToZero(vetor);
+		System.out.print("\nO valor mais próximo de zero é: " + valor);
 	}
+	public static int computeClosestToZero(int[] ts) {
+		 if(ts.length == 0) {
+			 return 0;
+		 }else {
+			 int valorMaisProximoDeZero = buscarItemMaisProximoDeZero(ts);			
+			 if(valorMaisProximoDeZero < 0) {			
+				 int valor  = Math.abs(valorMaisProximoDeZero);	
+				 if(exists(ts, valor)) {			
+					 return valor;
+				 }else {
+					 return valorMaisProximoDeZero;
+				 }	
+		    }else {
 	
+		    	return valorMaisProximoDeZero;
+		    }
+		 }
+	}
 	public static int buscarItemMaisProximoDeZero(int[] vetor) {
 		int menorDistancia = medirDistanciaAteZero(vetor[0]), distanciaDoItemAtual, indiceItemProximo = 0;
 		
@@ -64,14 +72,7 @@ public class ValorMaisProximoDeZero {
 	}
 	
 	public static void printAray(int[] array) {
-		System.out.print("[ ");
-		for(int i = 0; i < array.length; i++) {
-			System.out.print(array[i]);
-			if(i < array.length -1) {
-				System.out.print(" , ");
-			}
-		}
-		System.out.print(" ]\n\n");
+		System.out.println(Arrays.toString(array));
 	}
 	
 	public static int tornarNumeroPositivo(int number) {
@@ -80,6 +81,7 @@ public class ValorMaisProximoDeZero {
 	}
 	
 	public static boolean  exists(int[] ints, int k) {
+		Arrays.sort(ints);
 		int inicio = 0;
 		int fim = ints.length -1;
 		int meio;
