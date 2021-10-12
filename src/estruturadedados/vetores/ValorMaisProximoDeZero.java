@@ -75,11 +75,6 @@ public class ValorMaisProximoDeZero {
 		System.out.println(Arrays.toString(array));
 	}
 	
-	public static int tornarNumeroPositivo(int number) {
-		int valorPositivo = (number * (-2))  / 2;
-		return valorPositivo;
-	}
-	
 	public static boolean  exists(int[] ints, int k) {
 		Arrays.sort(ints);
 		int inicio = 0;
