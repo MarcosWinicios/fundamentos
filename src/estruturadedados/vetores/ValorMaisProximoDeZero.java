@@ -8,12 +8,10 @@ public class ValorMaisProximoDeZero {
 	public static void main(String[] args) {
 		// Capturar o valor mais próximo de ZERO em um vetor.
 		// Se o valor for negativo e ouver o mesmo valor positivo, capturar o positivo
-		
 		Scanner input =  new Scanner(System.in);
 		
 		System.out.print("Informe o tamanho do vetor a ser gerado: ");
 		int tamanhoVetor = input.nextInt();
-		
 		System.out.println();
 	
 		int[] vetor = new int[tamanhoVetor];
@@ -21,26 +19,32 @@ public class ValorMaisProximoDeZero {
 		vetor = writeArray(vetor);
 		printAray(vetor);
 		
-		int valor = computeClosestToZero(vetor);
-		System.out.print("\nO valor mais próximo de zero é: " + valor);
+		System.out.print("\nO valor mais próximo de zero é: " + busca(vetor));
 	}
-	public static int computeClosestToZero(int[] ts) {
-		 if(ts.length == 0) {
-			 return 0;
-		 }else {
-			 int valorMaisProximoDeZero = buscarItemMaisProximoDeZero(ts);			
-			 if(valorMaisProximoDeZero < 0) {			
-				 int valor  = Math.abs(valorMaisProximoDeZero);	
-				 if(exists(ts, valor)) {			
-					 return valor;
-				 }else {
-					 return valorMaisProximoDeZero;
-				 }	
-		    }else {
 	
-		    	return valorMaisProximoDeZero;
-		    }
-		 }
+	public static String busca(int[] array) {
+		
+		if(array.length == 0) {
+			return "\nO Array está vazio";
+		}
+		int valor = verificarSeEpositivo(array);
+		return  "\n" + valor;
+		
+	}
+	public static int verificarSeEpositivo(int[] ts) {
+		 int valorMaisProximoDeZero = buscarItemMaisProximoDeZero(ts);			
+		 if(valorMaisProximoDeZero < 0) {			
+			 int valor  = Math.abs(valorMaisProximoDeZero);	
+			 if(exists(ts, valor)) {			
+				 return valor;
+			 }else {
+				 return valorMaisProximoDeZero;
+			 }	
+	    }else {
+
+	    	return valorMaisProximoDeZero;
+	    }
+	 
 	}
 	public static int buscarItemMaisProximoDeZero(int[] vetor) {
 		int menorDistancia = medirDistanciaAteZero(vetor[0]), distanciaDoItemAtual, indiceItemProximo = 0;
