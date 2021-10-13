@@ -26,10 +26,13 @@ public class InserirQuebraDeLinhaString {
 	public static void main(String[] args) {
 		Scanner input =  new Scanner(System.in);
 		
-		String str = "abcdefghi";
-//		String str = input.next();
-		System.out.println(str);
-		System.out.println(dividirLinhas(str, 2));
+		System.out.print("Informe o texto a ser manipulado: " );
+		String str = input.nextLine();
+		
+		System.out.print("\nInforme a quantidade máxima de caracteres por linha: ");
+		int maxCaractere = input.nextInt();
+		
+		System.out.println(dividirLinhas(str, maxCaractere));
 	}
 	
 	private static String dividirLinhas(String str, int maxCaracterePorLinha) {
