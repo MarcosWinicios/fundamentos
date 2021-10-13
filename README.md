@@ -22,3 +22,6 @@
 			- Expressão Lâmbda
 			- Method Reference
 		- Stream API
+
+- Desafios
+	- Receber um texto e retornar o mesmo com quebra de linha sem utilizar o "\n". O número máximo de caracteres por linha deve ser informado pelo usuário
