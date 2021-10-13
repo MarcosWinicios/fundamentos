@@ -2,6 +2,19 @@ package desafios;
 
 import java.util.Arrays;
 
+/*
+ * Receber uma String e retornar outra string em forma de código, onde será exibido de forma concatenada a quantidade que cada caractere se repete, sem espaço
+ * Espaços e números Não devem ser contabilizados e nem exibidos
+ * Letras Maiúsculas e minúsculas não devem ser diferenciadas
+ * A resposta deve estar em ordem alfabética
+ * 
+ * ENTRADA
+ * aBbhbcdeff
+ * 
+ * SAIDA
+ * a1b3c1d1e1f2h1
+ * 
+ * */
 public class CodificarTexto {
 	public static void main(String[] args) {
 		String texto ="ahhhhgjjuioa";
