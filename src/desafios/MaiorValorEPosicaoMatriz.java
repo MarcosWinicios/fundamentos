@@ -1,11 +1,11 @@
-package estruturadedados.matrizes.exercicios;
+package desafios;
 
 import java.util.Random;
 
-public class MaiorValor {
+public class MaiorValorEPosicaoMatriz {
 
 	public static void main(String[] args) {
-		//Gerar e imprimir uma Matrix M 4X4 com valores aleatórios entre 0 e 9. Após isso determine o maior valor e sua posicao
+		//Gerar e imprimir uma Matrix M 4X4 com valores aleatórios entre 0 e 9. Após isso determine o maior
 		
 		Random rand =  new Random();
 		int[][] matriz = new int [4][4];
