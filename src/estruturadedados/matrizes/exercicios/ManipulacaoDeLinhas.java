@@ -10,8 +10,9 @@ public class ManipulacaoDeLinhas {
 		matriz = gerarMatriz(matriz);
 		System.out.println("\n\nTamanho da Matriz: " + matriz.length);
 		imprimirMatriz(matriz);
-		
-		System.out.println(Arrays.toString(pegarLinha(matriz, 5)));
+		int[] linha = pegarLinha(matriz, 5);
+		System.out.println(Arrays.toString(linha));
+		pegarMaiorValor(linha);
 
 	}
 	
@@ -52,5 +53,18 @@ public class ManipulacaoDeLinhas {
 			
 		}
 		return valoresDaLinha;
+	}
+	
+	public static int pegarMaiorValor(int[] array) {
+		int maior = 0;
+//		Arrays.sort(array);
+//		maior = array[array.length -1];
+//		System.out.println("Maior Valor Pego com SORT: " + maior);
+		for(int i = 0; i < array.length; i++) {
+			if(array[i] > maior) {
+				maior = array[i];
+			}
+		}
+		return maior;
 	}
 }
