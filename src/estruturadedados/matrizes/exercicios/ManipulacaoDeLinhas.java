@@ -8,12 +8,13 @@ public class ManipulacaoDeLinhas {
 	public static void main(String[] args) {
 		int[][] matriz = new int[10][10];
 		matriz = gerarMatriz(matriz);
-		System.out.println("\n\nTamanho da Matriz: " + matriz.length);
+		int numLinha = 5;
 		imprimirMatriz(matriz);
-		int[] linha = pegarLinha(matriz, 5);
-		System.out.println(Arrays.toString(linha));
-		pegarMaiorValor(linha);
-
+		System.out.println("Tamanho da Matriz: " + matriz.length);
+		imprimirIformacoesDaLinha(matriz, numLinha);
+		
+		
+		
 	}
 	
 	public static int[][] gerarMatriz(int [][] matriz) {
@@ -39,8 +40,6 @@ public class ManipulacaoDeLinhas {
 	}
 	
 	public static int[] pegarLinha(int[][] matriz, int linha) {
-		
-		System.out.println("Linha: " + linha);
 		int tamanho = matriz.length;
 		int[] valoresDaLinha = new int[tamanho];
 		
@@ -67,4 +66,29 @@ public class ManipulacaoDeLinhas {
 		}
 		return maior;
 	}
+	
+	 public static int pegarMenorValor(int[] array, int maior) {
+		 int menor = maior; 
+//		 Arrays.sort(array);
+//		 menor = array[0];
+		 for(int i = 0; i < array.length; i++) {
+			 if(array[i] < menor) {
+				 menor = array[i];
+			 }
+		 }
+		 return menor;
+	 }
+	 
+	 public static void imprimirIformacoesDaLinha(int[][] matriz, int numLinha) {
+		int maior, menor;
+		int[] linha = pegarLinha(matriz, numLinha);
+		System.out.println("Valores da Linha " + numLinha);
+		
+		System.out.println("\n" + Arrays.toString(linha));
+		
+		maior = pegarMaiorValor(linha);
+		System.out.print("\nMAIOR valor da linha " + numLinha + ": " + maior);
+		menor = pegarMenorValor(linha,maior);
+		System.out.print("\nMENOR valor da linha " + numLinha + ": " + menor);
+	 }
 }
