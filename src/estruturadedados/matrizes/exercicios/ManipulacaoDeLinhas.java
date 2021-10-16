@@ -9,9 +9,15 @@ public class ManipulacaoDeLinhas {
 		int[][] matriz = new int[10][10];
 		matriz = gerarMatriz(matriz);
 		int numLinha = 5;
+		int numColuna = 7;
 		imprimirMatriz(matriz);
 		System.out.println("Tamanho da Matriz: " + matriz.length);
-		imprimirIformacoesDaLinha(matriz, numLinha);
+//		imprimirIformacoesDaLinha(matriz, numLinha);
+		
+		int[] coluna = pegarColuna(matriz, numColuna);
+		
+		System.out.println("Valores da coluna: " + numColuna);
+		System.out.println("\n" + Arrays.toString(coluna));
 		
 		
 		
@@ -28,14 +34,46 @@ public class ManipulacaoDeLinhas {
 	}
 	
 	public static void imprimirMatriz(int[][]matriz) {
+		String mensagem = new String();
+		
 		System.out.println();
+		System.out.print("Colunas | ");
+		
+		//Printar indice Colunas
 		for(int i = 0; i < matriz.length; i++) {
-			System.out.print("Linha:" + (i + 1) + "| ");
+			if( i < 9) {
+				mensagem = " |";
+			}else {
+				mensagem = "|";
+			}
+			System.out.print(i+1 + mensagem);
+			
+		}
+		System.out.println();
+		System.out.print("");
+		for(int i = 0; i < matriz.length; i++) {
+			System.out.print("____");
+		}
+		System.out.println();
+		
+		
+		//Printar indice Linhas
+		for(int i = 0; i < matriz.length; i++) {
+			if( i < 9) {
+				mensagem = "Linha ";
+			}else {
+				mensagem = "Linha";
+			}
+			System.out.print(mensagem + ":" + (i + 1) + "| ");
 			for(int j = 0; j < matriz[i].length; j++) {
-				System.out.print((matriz[i][j]) + " ");
+				System.out.print((matriz[i][j]) + " |");
 			}
 			System.out.println();
 		}
+		for(int i = 0; i < matriz.length; i++) {
+			System.out.print("____");
+		}
+		System.out.println();
 		System.out.println();
 	}
 	
@@ -49,7 +87,6 @@ public class ManipulacaoDeLinhas {
 					valoresDaLinha[j] = matriz[i][j];
 				}
 			}
-			
 		}
 		return valoresDaLinha;
 	}
@@ -90,5 +127,18 @@ public class ManipulacaoDeLinhas {
 		System.out.print("\nMAIOR valor da linha " + numLinha + ": " + maior);
 		menor = pegarMenorValor(linha,maior);
 		System.out.print("\nMENOR valor da linha " + numLinha + ": " + menor);
+	 }
+	 
+	 public static int[] pegarColuna(int[][] matriz, int numColuna) {
+		 int[] coluna = new int[matriz.length];
+		 
+		 for(int i = 0; i < matriz.length; i++) {
+			 for(int j = 0; j < matriz[i].length; j++) {
+				 if(j == numColuna -1) {
+					 coluna[i] = matriz[i][j];
+				 }
+			 }
+		 }
+		 return coluna;
 	 }
 }
