@@ -3,6 +3,11 @@ package estruturadedados.matrizes.exercicios;
 import java.util.Arrays;
 import java.util.Random;
 
+/*
+ * Gerar uma matriz M 10X10 com valores aleatórios entre 0-9.
+ * Após isso indique qual é o maior e o menor valor da linha 5 e
+ * qual é o maior e o menor valor da coluna 7.
+ */
 public class ManipulacaoDeLinhas {
 
 	public static void main(String[] args) {
