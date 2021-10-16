@@ -11,13 +11,10 @@ public class ManipulacaoDeLinhas {
 		int numLinha = 5;
 		int numColuna = 7;
 		imprimirMatriz(matriz);
-		System.out.println("Tamanho da Matriz: " + matriz.length);
-//		imprimirIformacoesDaLinha(matriz, numLinha);
-		
-		int[] coluna = pegarColuna(matriz, numColuna);
-		
-		System.out.println("Valores da coluna: " + numColuna);
-		System.out.println("\n" + Arrays.toString(coluna));
+		System.out.println("Tamanho da Matriz: " + matriz.length + "X" + matriz.length);
+		imprimirIformacoesDaLinha(matriz, numLinha);
+		System.out.println("___________________________________");
+		imprimirInformacoesDaColuna(matriz, numColuna);
 		
 		
 		
@@ -119,14 +116,15 @@ public class ManipulacaoDeLinhas {
 	 public static void imprimirIformacoesDaLinha(int[][] matriz, int numLinha) {
 		int maior, menor;
 		int[] linha = pegarLinha(matriz, numLinha);
-		System.out.println("Valores da Linha " + numLinha);
+		maior = pegarMaiorValor(linha);
+		menor = pegarMenorValor(linha,maior);
 		
+		System.out.println("LINHA\n\nValores da Linha " + numLinha);
 		System.out.println("\n" + Arrays.toString(linha));
 		
-		maior = pegarMaiorValor(linha);
 		System.out.print("\nMAIOR valor da linha " + numLinha + ": " + maior);
-		menor = pegarMenorValor(linha,maior);
-		System.out.print("\nMENOR valor da linha " + numLinha + ": " + menor);
+		System.out.print("\nMENOR valor da linha " + numLinha + ": " + menor + "\n");
+		System.out.println();
 	 }
 	 
 	 public static int[] pegarColuna(int[][] matriz, int numColuna) {
@@ -140,5 +138,19 @@ public class ManipulacaoDeLinhas {
 			 }
 		 }
 		 return coluna;
+	 }
+	 
+	 public static void imprimirInformacoesDaColuna(int[][] matriz, int numColuna) {
+		 int[] coluna = pegarColuna(matriz, numColuna);
+			
+		 System.out.println("COLUNA\n\nValores da coluna: " + numColuna);
+		 System.out.println("\n" + Arrays.toString(coluna));
+		 int maior, menor;
+		 maior = pegarMaiorValor(coluna);
+		 menor = pegarMenorValor(coluna, maior);
+			
+		 System.out.print("\nMAIOR valor da Coluna " + numColuna + ": " + maior);
+		 System.out.print("\nMENOR valor da Coluna " + numColuna + ": " + menor + "\n");
+		 System.out.println();
 	 }
 }
