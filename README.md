@@ -1,4 +1,4 @@
-# Fundamentos da linguagem JAVA
+# Fundamentos da linguagem Java
 
 
 - Estrutura de dados
