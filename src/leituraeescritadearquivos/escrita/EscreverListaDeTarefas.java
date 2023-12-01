@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ListaDeTarefas {
+public class EscreverListaDeTarefas {
 	
 	final static String PATH = "/home/marcos-winicios/Workspace/tmp/";
 	
