@@ -11,11 +11,12 @@ public class ListaDeTarefas {
 	
 	final static String PATH = "/home/marcos-winicios/Workspace/tmp/";
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException{
 		Scanner input = new Scanner(System.in);
 
 		ArrayList<String> linhas = new ArrayList<String>();
 		System.out.println("Informe tarefas a serem realizadas no dia seguinte. Digite [X] para encerrar:\n");
+		linhas.add("#### Lista de Tarefas #####\n");
 
 		int i = 1;
 		while (true) {
@@ -29,11 +30,15 @@ public class ListaDeTarefas {
 				linhas.add(linha);
 			i++;
 		}
-
+		
+		escreverNoArquivo("arquivo.txt", linhas);
 		input.close();
 
-		Path arquivo = Paths.get(PATH + "arquivo.txt");
-		Files.write(arquivo, linhas);
 		System.out.println("Fim...");
+	}
+	
+	static void escreverNoArquivo(String arquivo, ArrayList<String> linhas) throws IOException {
+		Path path = Paths.get(PATH + arquivo);
+		Files.write(path, linhas);
 	}
 }
