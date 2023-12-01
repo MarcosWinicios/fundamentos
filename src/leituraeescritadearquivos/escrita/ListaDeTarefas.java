@@ -31,7 +31,7 @@ public class ListaDeTarefas {
 			i++;
 		}
 		
-		escreverNoArquivo("arquivo.txt", linhas);
+		escreverNoArquivo("lista-de-tarefas.txt", linhas);
 		input.close();
 
 		System.out.println("Fim...");
