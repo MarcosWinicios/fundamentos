@@ -2,33 +2,53 @@ package estruturadedados.listadinamica;
 
 public class main {
 	public static void main(String[] args) {
-		ListaAlunos lista = new ListaAlunos();
-		
+		ListaAlunos listaAlunos = new ListaAlunos();
+
 		Aluno aluno = new Aluno();
-		aluno.nome = "João";
-		lista.adicionar(aluno);
-		
+		aluno.nome = "Thiado";
+		listaAlunos.adicionar(aluno);
+
 		Aluno aluno2 = new Aluno();
 		aluno2.nome = "Maria";
-		lista.adicionar(aluno2);
-		
+		listaAlunos.adicionar(aluno2);
+
 		Aluno aluno3 = new Aluno();
 		aluno3.nome = "Alexandre";
-		lista.adicionar(aluno3);
-		
+		listaAlunos.adicionar(aluno3);
+
 		Aluno aluno4 = new Aluno();
 		aluno4.nome = "Normandes";
-		lista.adicionar(aluno4);
-		
+		listaAlunos.adicionar(aluno4);
+
 		Aluno aluno5 = new Aluno();
-		aluno5.nome = "Thiago";
-		lista.adicionar(aluno5);
+		aluno5.nome = "João";
+		listaAlunos.adicionar(aluno5);
+
+		iterar(listaAlunos);
+
+		listaAlunos.ordernar();
+
+		iterar(listaAlunos);
 		
-		for( int i = 0; i < lista.tamanho(); i++) {
-			Aluno a = lista.obter(i);
-			
-			System.out.println("Aluno: " +  a.nome);
+		listaAlunos.remover(aluno3);
+
+		iterar(listaAlunos);
+
+	}
+
+	public static void iterar(ListaAlunos listaAlunos) {
+
+		for (int i = 0; i < listaAlunos.tamanho(); i++) {
+			Aluno a = listaAlunos.obter(i);
+
+			if (a != null) {
+				System.out.println("Aluno: " + a.nome);
+			} else {
+				System.out.println("Aluno sem nome");
+			}
 		}
 		
+		System.out.println("---------------------------------\n");
+
 	}
 }
