@@ -3,7 +3,7 @@ package estruturadedados.listadinamica;
 public class ListaAlunos {
 	static final int QUANTIDADE_LISTA = 5;
 
-	Aluno[] lista = new Aluno[QUANTIDADE_LISTA];
+	public Aluno[] lista = new Aluno[QUANTIDADE_LISTA];
 
 	int tamanhoLista = 0;
 
@@ -15,7 +15,7 @@ public class ListaAlunos {
 		return tamanhoLista;
 	}
 
-	void adicionar(Aluno aluno) {
+	public void adicionar(Aluno aluno) {
 		if (tamanhoLista == lista.length) {
 			Aluno[] novaLista = new Aluno[QUANTIDADE_LISTA + lista.length];
 
@@ -43,7 +43,7 @@ public class ListaAlunos {
 		}
 	}
 
-	void remover(int indice) {
+	public void remover(int indice) {
 		int indiceInicial = indice + 1;
 
 		for (int i = indiceInicial; i < tamanhoLista; i++) {
@@ -54,7 +54,7 @@ public class ListaAlunos {
 		lista[tamanhoLista] = null;
 	}
 
-	void ordernar() {
+	public void ordernar() {
 		// [D, C, A , F , G]
 		for (int i = 1; i < tamanhoLista; i++) {
 			Aluno alunoPosicaoBase = lista[i];

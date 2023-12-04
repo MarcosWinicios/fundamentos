@@ -3,7 +3,7 @@ package estruturadedados.listadinamica;
 
 public class Aluno {
 
-	String nome;
+	public String nome;
 
 	boolean vemDepoisDe(Aluno aluno) {
 		if (aluno == null) {
