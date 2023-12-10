@@ -40,14 +40,14 @@ public class Conta {
 		this.quebrarLinha("-");
 	}
 	
-	protected static void quebrarLinha() {
+	protected void quebrarLinha() {
 		for (int i = 0; i < 10; i++) {
 			System.err.print("*");
 		}
 		System.out.print("\n");
 	}
 
-	protected static void quebrarLinha(String text) {
+	protected void quebrarLinha(String text) {
 		for (int i = 0; i < 10; i++) {
 			System.err.print(text);
 		}

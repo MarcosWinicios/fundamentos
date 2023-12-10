@@ -1,11 +1,10 @@
 package desafios.gerenciadorFinanceiro;
 
 import desafios.gerenciadorFinanceiro.modelo.Cliente;
-import desafios.gerenciadorFinanceiro.modelo.Conta;
 import desafios.gerenciadorFinanceiro.modelo.ContaPagar;
 import desafios.gerenciadorFinanceiro.modelo.ContaReceber;
 import desafios.gerenciadorFinanceiro.modelo.Fornecedor;
-import desafios.gerenciadorFinanceiro.modelo.Pessoa;
+
 
 public class Principal {
 
@@ -25,7 +24,7 @@ public class Principal {
 
 		// instanciando contas a receber
 		ContaReceber contaReceber1 = new ContaReceber(atacadista, "Desenvolvimento de projeto de logística em Java", 89500d, "23/05/2012");
-		ContaReceber contaReceber2 = new ContaReceber(telecom, "Manutenção em sistema de conta online", 53200d, "13/05/2012");
+		ContaReceber contaReceber2 = new ContaReceber(telecom, "Manutenção em sistema de conta online", 23200d, "13/05/2012");
 
 		// pagamento e cancelamento de contas a pagar
 		contaPagar1.pagar();
@@ -34,10 +33,6 @@ public class Principal {
 
 		// recebimento e cancelamento de contas a receber
 		contaReceber1.receber();
-		contaReceber2.cancelar();
-		
-
-	
-		
+		contaReceber2.cancelar();	
 	}
 }

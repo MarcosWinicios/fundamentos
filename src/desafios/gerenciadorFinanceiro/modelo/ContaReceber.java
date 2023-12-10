@@ -8,7 +8,6 @@ public class ContaReceber extends Conta {
 		super();
 	}
 
-	//new ContaPagar(mercado, "Compras do mês", 390d, "19/05/2012");
 	public ContaReceber(Cliente cliente, String descricao, Double valor, String dataVencimento) {
 		super(descricao, valor, dataVencimento);
 		this.cliente = cliente;
@@ -18,7 +17,7 @@ public class ContaReceber extends Conta {
 		if (this.podeSerCancelada()) {
 			super.cancelar();
 		} else {
-			System.err.println("ESSA CONTA NÃO PODE SER CANCELADA!");
+			System.err.println("ESSA CONTA NÃO PODE SER CANCELADA: " + this.descricao);
 		}
 		this.quebrarLinha("-");
 	}
@@ -26,14 +25,6 @@ public class ContaReceber extends Conta {
 	//Só deve ser possível cancelar uma conta caso o valor seja menor que 50 mil
 	private boolean podeSerCancelada() {
 		return !(this.getValor() <= 50000d);
-	}
-
-	public Cliente getCliente() {
-		return this.cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
 	}
 
 	public void receber() {
@@ -52,5 +43,13 @@ public class ContaReceber extends Conta {
 		
 		super.quebrarLinha();
 		
+	}
+	
+	public Cliente getCliente() {
+		return this.cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 }
