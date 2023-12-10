@@ -1,14 +1,12 @@
 package desafios.gerenciadorFinanceiro.modelo;
 
-public class Fornecedor {
+public class Fornecedor extends Pessoa{
 
-	public String nome;
-
-	public String getNome() {
-		return this.nome;
+	public Fornecedor() {
+		super();
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	
+	public Fornecedor(String nome) {
+		super(nome);
 	}
-
 }

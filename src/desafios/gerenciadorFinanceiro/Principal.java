@@ -1,37 +1,43 @@
 package desafios.gerenciadorFinanceiro;
 
+import desafios.gerenciadorFinanceiro.modelo.Cliente;
+import desafios.gerenciadorFinanceiro.modelo.Conta;
 import desafios.gerenciadorFinanceiro.modelo.ContaPagar;
+import desafios.gerenciadorFinanceiro.modelo.ContaReceber;
 import desafios.gerenciadorFinanceiro.modelo.Fornecedor;
+import desafios.gerenciadorFinanceiro.modelo.Pessoa;
 
 public class Principal {
 
 	public static void main(String[] args) {
-		Fornecedor imobiliaria = new Fornecedor();
-		imobiliaria.setNome("Casa & Cia Negócios Imobiliários");
+		// instanciando fornecedores
+		Fornecedor imobiliaria = new Fornecedor("Casa & Cia Negócios Imobiliários");
+		Fornecedor mercado = new Fornecedor("Mercado do João");
+		
+		// instanciando clientes
+		Cliente atacadista = new Cliente("Triângulo Quadrado Atacadista");
+		Cliente telecom = new Cliente("FoneNet Telecomunicações");
+	
 
-		Fornecedor mercado = new Fornecedor();
-		mercado.setNome("Mercado do João");
+		// instanciando contas a pagar
+		ContaPagar contaPagar1 = new ContaPagar(imobiliaria, "Aluguel da matriz", 1230d, "10/05/2012");
+		ContaPagar contaPagar2 = new ContaPagar(mercado, "Compras do mês", 390d, "19/05/2012");
+
+		// instanciando contas a receber
+		ContaReceber contaReceber1 = new ContaReceber(atacadista, "Desenvolvimento de projeto de logística em Java", 89500d, "23/05/2012");
+		ContaReceber contaReceber2 = new ContaReceber(telecom, "Manutenção em sistema de conta online", 53200d, "13/05/2012");
+
+		// pagamento e cancelamento de contas a pagar
+		contaPagar1.pagar();
+		contaPagar2.cancelar();
+		contaPagar2.cancelar();
+
+		// recebimento e cancelamento de contas a receber
+		contaReceber1.receber();
+		contaReceber2.cancelar();
 		
-		ContaPagar conta1 = new ContaPagar();
-		conta1.setDescricao("Aluguel da matriz");
-		conta1.setValor(1230d);
-		conta1.setDataVencimento("10/05/2012");
-		conta1.setFornecedor(imobiliaria);
+
+	
 		
-		ContaPagar conta2 = new ContaPagar(mercado, "Compras do mês", 390d, "19/05/2012");
-		
-		ContaPagar conta3 = new ContaPagar(mercado, "Aluguel da filial", 700d, "11/05/2012");
-		
-		// pagamento de conta pendente (ok, deve funcionar)
-		conta1.pagar();
-		
-		// tentativa de pagar uma conta cancelada (não deve aceitar pagamento)
-		conta2.cancelar();
-		conta2.pagar();
-		
-		// tentativa de pagar uma conta duas vezes (não deve aceitar na segunda vez)
-		conta3.pagar();
-		conta3.pagar();
 	}
-
 }
