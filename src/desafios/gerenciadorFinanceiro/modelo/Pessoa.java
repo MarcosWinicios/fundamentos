@@ -1,6 +1,6 @@
 package desafios.gerenciadorFinanceiro.modelo;
 
-public class Pessoa {
+public abstract class Pessoa {
 	protected String nome;
 
 	public Pessoa() {

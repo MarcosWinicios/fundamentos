@@ -27,7 +27,21 @@ public class ContaPagar extends Conta {
 		
 		super.quebrarLinha();
 	}
+	
+	@Override
+	public void exibirDetalhes() {
 
+		String resultado = "";
+		resultado += "______________CONTA A PAGAR ______________\n\n";
+		resultado += "Conta: " + this.getDescricao() + "\n";
+		resultado += "Fornecedor: " + this.getFornecedor().getNome() + "\n";
+		resultado += "Vencimento: " + this.getDataVencimento() + "\n";
+		resultado += "Valor: " + this.getValor() + "\n";
+		resultado += "Situação: " + this.getSituacaoConta() + "\n";
+		
+		System.out.println(resultado);
+		
+	}
 
 	public Fornecedor getFornecedor() {
 		return this.fornecedor;

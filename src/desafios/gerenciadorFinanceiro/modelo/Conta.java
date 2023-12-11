@@ -1,6 +1,6 @@
 package desafios.gerenciadorFinanceiro.modelo;
 
-public class Conta {
+public abstract class Conta {
 	protected String descricao;
 	protected Double valor;
 	protected String dataVencimento;
@@ -39,6 +39,10 @@ public class Conta {
 		
 		this.quebrarLinha("-");
 	}
+	
+	
+	public abstract void exibirDetalhes();
+	
 	
 	protected void quebrarLinha() {
 		for (int i = 0; i < 10; i++) {

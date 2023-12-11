@@ -1,9 +1,11 @@
 package desafios.gerenciadorFinanceiro;
 
 import desafios.gerenciadorFinanceiro.modelo.Cliente;
+import desafios.gerenciadorFinanceiro.modelo.Conta;
 import desafios.gerenciadorFinanceiro.modelo.ContaPagar;
 import desafios.gerenciadorFinanceiro.modelo.ContaReceber;
 import desafios.gerenciadorFinanceiro.modelo.Fornecedor;
+import desafios.gerenciadorFinanceiro.modelo.RelatorioContas;
 
 
 public class Principal {
@@ -33,6 +35,12 @@ public class Principal {
 
 		// recebimento e cancelamento de contas a receber
 		contaReceber1.receber();
-		contaReceber2.cancelar();	
+		contaReceber2.cancelar();
+		
+		
+		// exibe listagem de todas as contas com detalhamento
+		Conta[] contas = new Conta[]{contaPagar1, contaPagar2, contaReceber1, contaReceber2};
+		RelatorioContas relatorio = new RelatorioContas();
+		relatorio.exibirListagem(contas);
 	}
 }
