@@ -40,6 +40,7 @@ public class Principal {
 		// recebimento e cancelamento de contas a receber
 		
 		receberConta(contaReceber1);
+		receberConta(contaReceber1);
 		receberConta(contaReceber2);
 		cancelarConta(contaReceber1);
 		cancelarConta(contaReceber2);
@@ -56,6 +57,7 @@ public class Principal {
 			conta.pagar();
 		} catch (OperacaoContaException e) {
 			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally {
 			quebrarLinha(" ");
 		}
@@ -74,6 +76,7 @@ public class Principal {
 			
 		} catch (OperacaoContaException e) {
 			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally {
 //			quebrarLinha(" ");
 		}
@@ -84,6 +87,7 @@ public class Principal {
 			conta.receber();
 		} catch (OperacaoContaException e) {
 			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}finally {
 			quebrarLinha(" ");
 		}
