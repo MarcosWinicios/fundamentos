@@ -1,5 +1,7 @@
 package desafios.gerenciadorFinanceiro.modelo;
 
+import desafios.gerenciadorFinanceiro.exception.OperacaoContaException;
+
 public abstract class Conta {
 	protected String descricao;
 	protected Double valor;
@@ -16,18 +18,18 @@ public abstract class Conta {
 		this.dataVencimento = dataVencimento;
 	}
 	
-	public void cancelar() {
+	public void cancelar() throws OperacaoContaException {
 		String resposta =  "";
 		if (SituacaoConta.PAGA.equals(this.getSituacaoConta())) {
 			resposta = "Não pode cancelar uma conta que já foi paga: ";
 			resposta = resposta.toUpperCase();
 			resposta += this.descricao + ".";
-			System.err.println(resposta);
+			throw new OperacaoContaException(resposta);
 		} else if (SituacaoConta.CANCELADA.equals(this.getSituacaoConta())) {
 			resposta = "Não pode cancelar uma conta que já foi cancelada: ";
 			resposta = resposta.toUpperCase();
 			resposta += this.descricao + ".";
-			System.err.println(resposta);
+			throw new OperacaoContaException(resposta);
 
 		} else {
 			resposta = "Cancelando conta " + this.getDescricao() + ".";
@@ -35,9 +37,9 @@ public abstract class Conta {
 			
 			// altera situação da conta para CANCELADA
 			this.situacaoConta = SituacaoConta.CANCELADA;
+//			this.quebrarLinha("-");
 		}
 		
-		this.quebrarLinha("-");
 	}
 	
 	
@@ -46,14 +48,14 @@ public abstract class Conta {
 	
 	protected void quebrarLinha() {
 		for (int i = 0; i < 10; i++) {
-			System.err.print("*");
+			System.out.print("*");
 		}
 		System.out.print("\n");
 	}
 
 	protected void quebrarLinha(String text) {
 		for (int i = 0; i < 10; i++) {
-			System.err.print(text);
+			System.out.print(text);
 		}
 		System.out.print("\n");
 	}

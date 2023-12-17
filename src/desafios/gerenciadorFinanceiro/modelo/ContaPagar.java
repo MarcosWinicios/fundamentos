@@ -1,21 +1,24 @@
 package desafios.gerenciadorFinanceiro.modelo;
 
+import desafios.gerenciadorFinanceiro.exception.OperacaoContaException;
+
 public class ContaPagar extends Conta {
 	private Fornecedor fornecedor;
-	
+
 	public ContaPagar() {
 		super();
 	}
+
 	public ContaPagar(Fornecedor fornecedor, String descricao, Double valor, String dataVencimento) {
 		super(descricao, valor, dataVencimento);
 		this.fornecedor = fornecedor;
 	}
 
-	public void pagar() {
+	public void pagar() throws OperacaoContaException {
 		if (SituacaoConta.PAGA.equals(this.getSituacaoConta())) {
-			System.err.println("Não pode pagar uma conta que já está paga: " + this.getDescricao() + ".");
+			throw new OperacaoContaException("Não pode pagar uma conta que já está paga: " + this.getDescricao() + ".");
 		} else if (SituacaoConta.CANCELADA.equals(this.getSituacaoConta())) {
-			System.err.println("Não pode pagar uma conta que está cancelada: " + this.getDescricao() + ".");
+			throw new OperacaoContaException("Não pode pagar uma conta que está cancelada: " + this.getDescricao() + ".");
 		} else {
 			System.out.println(
 					"Pagando conta " + this.getDescricao() + " no valor de " + this.getValor() + " e vencimento em "
@@ -23,11 +26,11 @@ public class ContaPagar extends Conta {
 
 			// altera situação da conta para PAGA
 			this.situacaoConta = SituacaoConta.PAGA;
+//			super.quebrarLinha("-");
 		}
-		
-		super.quebrarLinha();
+
 	}
-	
+
 	@Override
 	public void exibirDetalhes() {
 
@@ -38,9 +41,9 @@ public class ContaPagar extends Conta {
 		resultado += "Vencimento: " + this.getDataVencimento() + "\n";
 		resultado += "Valor: " + this.getValor() + "\n";
 		resultado += "Situação: " + this.getSituacaoConta() + "\n";
-		
+
 		System.out.println(resultado);
-		
+
 	}
 
 	public Fornecedor getFornecedor() {

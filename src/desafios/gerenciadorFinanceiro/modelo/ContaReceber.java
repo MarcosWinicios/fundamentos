@@ -1,5 +1,7 @@
 package desafios.gerenciadorFinanceiro.modelo;
 
+import desafios.gerenciadorFinanceiro.exception.OperacaoContaException;
+
 public class ContaReceber extends Conta {
 
 	private Cliente cliente;
@@ -13,13 +15,13 @@ public class ContaReceber extends Conta {
 		this.cliente = cliente;
 	}
 
-	public void cancelar() {
+	public void cancelar() throws OperacaoContaException {
 		if (this.podeSerCancelada()) {
 			super.cancelar();
 		} else {
-			System.err.println("ESSA CONTA NÃO PODE SER CANCELADA: " + this.descricao);
+			throw new OperacaoContaException("ESSA CONTA NÃO PODE SER CANCELADA: " + this.descricao);
 		}
-		this.quebrarLinha("-");
+//		this.quebrarLinha("-");
 	}
 	
 	//Só deve ser possível cancelar uma conta caso o valor seja menor que 50 mil
@@ -27,11 +29,11 @@ public class ContaReceber extends Conta {
 		return !(this.getValor() <= 50000d);
 	}
 
-	public void receber() {
+	public void receber() throws OperacaoContaException {
 		if (SituacaoConta.PAGA.equals(this.getSituacaoConta())) {
-			System.err.println("Não pode receber uma conta que já foi recebida: " + this.getDescricao() + ".");
+			throw new OperacaoContaException("Não pode receber uma conta que já foi recebida: " + this.getDescricao() + ".");
 		} else if (SituacaoConta.CANCELADA.equals(this.getSituacaoConta())) {
-			System.err.println("Não pode receber uma conta que está cancelada: " + this.getDescricao() + ".");
+			throw new OperacaoContaException("Não pode receber uma conta que está cancelada: " + this.getDescricao() + ".");
 		} else {
 			System.out.println(
 					"Recebendo conta " + this.getDescricao() + " no valor de " + this.getValor() + " e vencimento em "
@@ -41,7 +43,7 @@ public class ContaReceber extends Conta {
 			this.situacaoConta = SituacaoConta.PAGA;
 		}
 		
-		super.quebrarLinha();
+//		super.quebrarLinha();
 		
 	}
 	
