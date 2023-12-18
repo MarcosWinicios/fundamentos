@@ -2,12 +2,17 @@ package collections;
 
 import java.util.Objects;
 
-public class Aluno {
+public class Aluno implements Comparable<Aluno>{
 	private String nome;
 	private int idade;
+
 	
 	public Aluno(String nome) {
 		this.nome = nome;
+	}
+	public Aluno(String nome, int idade) {
+		this.nome = nome;
+		this.idade = idade;
 	}
 	
 	public String getNome() {
@@ -41,6 +46,17 @@ public class Aluno {
 		Aluno other = (Aluno) obj;
 		return Objects.equals(nome, other.nome);
 	}
+	
+	@Override
+	public String toString() {
+		return this.nome + " tem " + this.idade + " anos.";
+	}
+	@Override
+	public int compareTo(Aluno aluno) {
+		return this.nome.compareTo(aluno.getNome());
+	}
+	
+	
 	
 	
 
