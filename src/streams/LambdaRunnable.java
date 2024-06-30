@@ -1,4 +1,4 @@
-package lambda;
+package streams;
 
 public class LambdaRunnable {
     public static void main(String[] args) {

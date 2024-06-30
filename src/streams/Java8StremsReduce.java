@@ -1,6 +1,5 @@
-package lambda;
+package streams;
 
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.DoubleStream;
 
