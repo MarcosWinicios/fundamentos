@@ -3,7 +3,7 @@ package streams;
 import java.util.*;
 import java.util.stream.DoubleStream;
 
-public class Java8StremsReduce {
+public class Java8StreamsReduce {
 
     // Reduce transforma todos os elementos de um Stream em um único valor. A forma de fazer isso é determinada pela função lambda passada como parâmetro.
     // Deve ser utilizada uma função associativa
