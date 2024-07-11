@@ -1,4 +1,4 @@
-package collections.streamApi.model;
+package streams.streamApi.model;
 
 import java.math.BigDecimal;
 

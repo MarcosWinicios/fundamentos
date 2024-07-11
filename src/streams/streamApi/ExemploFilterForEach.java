@@ -1,4 +1,4 @@
-package collections.streamApi;
+package streams.streamApi;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -7,8 +7,8 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import collections.streamApi.model.Produto;
-import collections.streamApi.model.Produto.Status;
+import streams.streamApi.model.Produto;
+import streams.streamApi.model.Produto.Status;
 
 
 
