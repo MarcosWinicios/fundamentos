@@ -16,7 +16,7 @@ public class StringPool {
         System.out.println(s3 == s4); // Endereços de memória diferentes
         System.out.println(s3 == s1); //Endereços de memórias diferentes
 
-        System.out.println(s1.equals(s3)); //
+        System.out.println(s1.equals(s3)
 
         /**
          * O operador == compara endereço de memória, e não o conteúdo
