@@ -4,24 +4,26 @@ import java.nio.file.Path;
 
 public class Course {
 
-    private int cdCourse;
+    private int idCourse;
     private String name;
+    private float value;
     private Path url;
 
     public Course(){}
 
-    public Course(int cdCourse, String name, Path url) {
-        this.cdCourse = cdCourse;
+    public Course(int idCourse, String name, float value, Path url) {
+        this.idCourse = idCourse;
         this.name = name;
         this.url = url;
+        this.value = value;
     }
 
-    public int getCdCourse() {
-        return cdCourse;
+    public int getIdCourse() {
+        return idCourse;
     }
 
-    public void setCdCourse(int cdCourse) {
-        this.cdCourse = cdCourse;
+    public void setIdCourse(int idCourse) {
+        this.idCourse = idCourse;
     }
 
     public String getName() {
@@ -40,11 +42,19 @@ public class Course {
         this.url = url;
     }
 
+    public float getValue() {
+        return value;
+    }
+
+    public void setValue(float value) {
+        this.value = value;
+    }
+
     @Override
     public String toString() {
         return "Course{" +
                 "name='" + name + '\'' +
-                ", cdCourse=" + cdCourse +
+                ", cdCourse=" + idCourse +
                 '}';
     }
 }
