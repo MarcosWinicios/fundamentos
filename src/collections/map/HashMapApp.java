@@ -1,6 +1,4 @@
-package collections;
-
-import estruturadedados.listadinamica.main;
+package collections.map;
 
 import java.util.HashMap;
 
