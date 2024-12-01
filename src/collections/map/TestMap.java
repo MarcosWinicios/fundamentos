@@ -1,4 +1,7 @@
-package collections.model;
+package collections.map;
+
+import collections.model.Client;
+import collections.model.Course;
 
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -7,12 +10,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-public class VirtualStore {
+public class TestMap {
 
     static Map<Client, List<Course>> payments = new HashMap<>();
 
     public static void main(String[] args) {
-        //Criar os cursos disponíveis no iste para venda
+        //Criar os cursos disponíveis no site para venda
         Course java8 = new Course(1, "Java 8 Para Web", 2000, Paths.get("/java8"));
         Course oracle12c = new Course(2, "Oracle 12C", 2500, Paths.get("/oracle12C"));
         Course php7 = new Course(3, "PHP7", 1500, Paths.get("/php7"));
